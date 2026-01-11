@@ -1,0 +1,164 @@
+/* ================= LEFT SIDE ================= */
+.firstSection {
+    margin-top: 1%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.product-title h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.product-title p {
+    font-size: 0.9rem;
+    color: #5f6a7d;
+}
+
+.footer-note {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.product {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: transparent;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.img-1 {
+    width: 360px;
+    display: block;
+}
+
+.img-2 {
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.color {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.img-3 {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.draggable-wrapper {
+    position: absolute;
+    top: 23%;
+    left: 34%;
+    width: 34%;
+    height: 34%;
+    cursor: move;
+    z-index: 5;
+}
+
+.draggable-wrapper:hover {
+    outline: 1px dashed #b0b7c3;
+}
+
+.resize-handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: -6px;
+    bottom: -6px;
+    background: #0176d3;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: se-resize;
+}
+
+/* ================= RIGHT SIDE ================= */
+.secondSection {
+    margin-left: 3rem;
+    max-width: 420px;
+}
+
+.right-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.75rem;
+}
+
+.option-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.4rem;
+    margin-bottom: 1.75rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-subtitle {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 1.2rem;
+}
+
+.field-group {
+    margin-bottom: 1.2rem;
+}
+
+.field-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.radio-divider {
+    color: #9ca3af;
+}
+
+.helper-text {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.color-input {
+    width: 100%;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+}

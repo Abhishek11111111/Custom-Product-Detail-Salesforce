@@ -1,0 +1,127 @@
+<template>
+    <div class="slds-grid slds-align_absolute-center">
+
+        <!-- ================= LEFT SIDE (PREVIEW – DO NOT CHANGE) ================= -->
+        <div class="slds-col slds-align_absolute-center firstSection">
+
+            <div class="product-title">
+                <h2>Customize Your T-Shirt</h2>
+                <p>Upload your logo, drag & resize it, and change colors instantly.</p>
+            </div>
+
+            <div class="product img-1">
+
+                <!-- Base Shirt Image -->
+                <img src={whiteShirt} class="img-1" />
+
+                <!-- Color / Gradient Overlay -->
+                <img src={whiteShirtDummy} class="img-2 color" />
+
+                <!-- Uploaded logo -->
+                <template if:true={webImageUrl}>
+                    <div class="draggable-wrapper" onmousedown={startDrag}>
+                        <img src={webImageUrl} class="img-3" />
+                        <span class="resize-handle" onmousedown={startResize}></span>
+                    </div>
+                </template>
+
+            </div>
+
+            <div class="footer-note">
+                Built with LWC inside Salesforce Commerce
+            </div>
+        </div>
+
+        <!-- ================= RIGHT SIDE (CUSTOMIZATION) ================= -->
+        <div class="slds-col secondSection">
+
+            <h2 class="right-title">Customize Your Design</h2>
+
+            <!-- COLORS CARD -->
+            <div class="option-card">
+                <div class="card-header">
+                    🎨 <span>Colors</span>
+                </div>
+
+                <p class="card-subtitle">
+                    Choose how your T-shirt looks.
+                </p>
+
+                <div class="field-group">
+                    <label class="field-label">Color Style</label>
+
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="colorType"
+                                value="solid"
+                                checked
+                                onchange={handleColorTypeChange}
+                            />
+                            <span>Solid Color</span>
+                        </label>
+
+                        <span class="radio-divider">|</span>
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="colorType"
+                                value="gradient"
+                                onchange={handleColorTypeChange}
+                            />
+                            <span>Gradient</span>
+                        </label>
+                    </div>
+
+                    <p class="helper-text">
+                        Choose between a single color or a gradient.
+                    </p>
+                </div>
+
+                <!-- Solid Color -->
+                <template if:false={isGradient}>
+                    <div class="field-group">
+                        <label class="field-label">Color</label>
+                        <input
+                            type="color"
+                            class="color-input"
+                            onchange={handleChange}
+                        />
+                    </div>
+                </template>
+
+                <!-- Gradient -->
+                <template if:true={isGradient}>
+                    <div class="field-group">
+                        <c-gradient-selector
+                            ongradientchange={handleGradientChange}
+                        ></c-gradient-selector>
+                    </div>
+                </template>
+            </div>
+
+            <!-- ADD DESIGN CARD -->
+            <div class="option-card">
+                <div class="card-header">
+                    🖼️ <span>Add Your Design</span>
+                </div>
+
+                <p class="card-subtitle">
+                    Paste a public image URL to overlay on the shirt.
+                </p>
+
+                <lightning-input
+                    type="text"
+                    label="Enter Image Url"
+                    placeholder="e.g. https://i.imgur.com/example.png"
+                    value={webImageUrl}
+                    onchange={handleURLChange}>
+                </lightning-input>
+            </div>
+
+        </div>
+
+    </div>
+</template>

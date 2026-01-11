@@ -1,18 +1,50 @@
-# Salesforce DX Project: Next Steps
+# Custom Product Image — Salesforce LWC
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This repository contains a custom Lightning Web Component (LWC) named `cutomProductImage` that enhances the Product Detail experience by displaying and managing custom product images with interactive behavior.
 
-## How Do You Plan to Deploy Your Changes?
+---
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Demo
 
-## Configure Your Salesforce DX Project
+![Component Demo]
+[▶ Watch demo video on LinkedIn] (https://www.linkedin.com/feed/update/urn:li:activity:7415970936874610689/)
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+---
 
-## Read All About It
+## Project Structure
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+unpackaged/
+├── lwc/
+│ └── cutomProductImage/
+│ ├── cutomProductImage.js
+│ ├── cutomProductImage.html
+│ ├── cutomProductImage.css
+│ ├── cutomProductImage.svg
+│ └── cutomProductImage.js-meta.xml
+└── package.xml
+
+
+---
+
+## Component
+
+- Name: `cutomProductImage`
+- Type: Lightning Web Component
+- Scope: Lightning App Builder / Product Pages
+
+---
+
+## Deployment
+
+```bash
+sfdx auth:web:login -d -a myOrg
+sfdx force:source:deploy -p unpackaged
+
+Usage
+
+1 - Deploy the component to your Salesforce org.
+2 - Open Lightning App Builder.
+3 - Edit the Product or Record page.
+4 - Drag cutomProductImage onto the page.
+5 - Save and activate.
+
